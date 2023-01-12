@@ -1,0 +1,155 @@
+
+%
+%  アブストラクトのサンプルファイル (UTF-8)
+%
+%   Updated: 2016/12/01 Kou Fujimoto (kou-f@mail.dendai.ac.jp)
+%   prepared by Takayuki Okuno (t_okuno@ms.kagu.tus.ac.jp)
+%
+\documentclass[twoside,twocolumn,11pt]{jarticle}  % 2段組の場合
+%\documentclass[11pt]{jarticle}   % 1段組の場合
+\usepackage{latexsym,amssymb}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{orsabs-utf8}
+\usepackage{comment}
+\usepackage{subcaption}
+%%%%%%%%%% Title %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{選挙区割問題に対するヒューリスティクスを用いた\\ZDD構築の効率化}
+\author{\begin{tabular}{lll@{}ll}
+         & 中央大学 & *&千原良太 & CHIHARA Ryota \\
+        01015123 & 中央大学 &  & 今堀慎治 & IMAHORI Shinji
+        \end{tabular}}
+\date{}
+\begin{document}
+\maketitle
+%%%%%%%%%% ここから本文%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{はじめに}
+日本の衆議院議員選挙の小選挙区制における区割画定問題(以下「選挙区割問題」と称する)とは，各都道府県にあらかじめ定められた選挙区数に対し，市区町村を複数組合せて条件を満たす選挙区を構築する問題である．
+選挙区割問題の解法の一つとしてゼロサプレス型二分決定グラフ(ZDD)による列挙法\cite{kawahara}がある．
+本研究では，ZDDによる解法にヒューリスティクスによる近似解法を組み合わせることで，従来より少ないメモリ使用量と実行時間で解を列挙する手法を提案する．
+
+\section{選挙区割問題の定義}
+選挙区割問題を考えるにあたって，まず都道府県ごとに市区町村とその隣接関係，各市区町村の人口を重みつきグラフ$G=(V,E,w)$で表現する．
+入力は，市区町村数を$n$として，市区町村集合$V=\{v_1,...,v_n\}$, 市区町村の隣接関係$E=\{\{v_i,v_j\}|$市区町村$v_i$と$v_j$は隣接$\}$, 市区町村$v_i$の人口$w_i$,選挙区数$m(<n)$が与えられる．
+そして出力は，$m$個の選挙区の集合$S=(S_1,...,S_m)$であり，$S_k$は$k$番目の選挙区に属する市区町村の集合を表す．
+ただし，選挙区は以下の制約を満たす必要がある．\\
+\textbf{制約1}：選挙区に属する市区町村から誘導される部分グラフは連結である\\
+\textbf{制約2}：全ての市区町村は唯一つの選挙区に属す\\
+\textbf{制約3}：選挙区は空集合ではない
+
+また，選挙区ごとの人口の和$P=\{P_1,...,P_m\}$ ($P_k=\sum_{v_i\in S_k}w_i\ (k=1,...,m)$)を計算し，選挙区人口の最小値$\mathrm{min}(P)$ と最大値$\mathrm{max}(P)$を調べる．
+制約を満たす選挙区割の中で，一票の格差が最小のもの，すなわち$\frac{\mathrm{max}(P)}{\mathrm{min}(P)}$の値が最小であるものを最適な選挙区割と定める．
+
+\section{ゼロサプレス型二分決定グラフ}
+ゼロサプレス型二分決定グラフ（ZDD)\cite{minato}は，組合せ集合を表現する非巡回有向グラフ(DAG)を用いたデータ構造である．
+ZDDの大きな特徴は，指数的な個数の組合せを効率的に表現できる点で，
+二分決定木から不要な節点の削除・共有を行うことで，疎な組合せ集合を高速に列挙することができる．
+
+また，ZDDをトップダウンに構築する手法としてフロンティア法がある．この手法では，根から順に節点を作成し，処理中のラベルをもつ節点集合の中で，共通する節点はその場で共有を行い，制約を満たさない枝はその場で枝刈りすることで，高速にZDDを構築することができる．
+
+\section{選挙区割列挙アルゴリズム}
+選挙区割問題では，ZDDの節点のラベルに辺集合$E$をそれぞれ割り当てることで，選んだ辺を選挙区の連結部分とし，連結部分からなる部分グラフで選挙区を表現する．
+節点には辺のラベルの他に，フロンティア上の市区町村の接続関係，確定した部分グラフの個数，部分グラフ中の各連結成分の重みの情報をもつ．
+また，制約として選挙区の人口上限$Upper$と人口下限$Lower$を最適な選挙区割を含むような値に定めておく．一般的には，$ratio$という許容格差の値を用いる．市区町村の人口の和を$W$として，$Upper=\frac{ratio \cdot W}{ratio+(m-1)}, \ Lower=\frac{W}{ratio \cdot (m-1)+1}$を求める．
+これらの情報をもとにフロンティア法によりZDDを構築し，確定した部分グラフの個数が$m$を超えた場合や$Upper$や$Lower$の制約を満たさない部分グラフが存在すると確定した場合に枝刈りを行い，最適な選挙区割の解を含むZDDを得ることができる．
+
+\section{ヒューリスティクスを用いた手法}
+選挙区割問題の場合，ZDDの節点に持つ情報が複数あり，節点の共有が行うのが難しい構造となる．そこで，ヒューリスティクスでできる限り最適な選挙区割に近い実行可能解を求め，この解の選挙区人口を用いて$Upper$と$Lower$の値を定めることで，ZDDの節点の削除を効率よく行い，実行時間の短縮と省メモリ化を目指す．
+本研究では，ヒューリスティクスとして焼きなまし法を実装し，連結性を保ちながらある市区町村を別の選挙区に組み込む近傍探索を繰り返す．
+
+\section{計算機実験}
+
+\begin{table}
+　　　　\small
+  \caption{入力データ}
+  \label{table:input}
+  \centering
+  \begin{tabular}{rl|rrr}
+    \hline
+    id & name & $|V|$ & $|E|$ & $m$ \\
+    \hline\hline
+    4 & Miyagi & 39 & 86 & 5 \\
+    6 & Yamagata & 35 & 85 & 3 \\
+    8 & Ibaraki & 44 & 94 & 7 \\
+    20 & Nagano & 77 & 187 & 5 \\
+    27 & Osaka & 72 & 168 & 19 \\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{table}
+　　　\small
+  \caption{ヒューリスティック解}
+  \label{table:huristic}
+  \centering
+  
+  \begin{tabular}{r|rr}
+    \hline
+    id & $Upper$ & $Lower$ \\
+    \hline\hline
+    4 & 467{,}561 & 451{,}162 \\
+    6 & 356{,}505 & 355{,}396 \\
+    8 & 419{,}212 & 391{,}937 \\
+    20 & 410{,}752 & 408{,}772 \\
+    27 & 569{,}011 & 424{,}530 \\
+  \end{tabular}
+\end{table}
+
+令和2年度の国勢調査のデータを用いて，制約に$ratio$を使用する手法とヒューリスティック解を用いる手法の2通りで，選挙区割を列挙するZDDの構築を行った．$ratio$はほぼ全ての都道府県の列挙が可能な値として1.4を採用した．
+実験環境はCPUがIntel Xeon E5-2687W-v4 (3.00GHz)，メモリが512GBのマシンを利用し，プログラムはC++17，
+ライブラリとしてSAPPOROBDD\footnote{\scriptsize{https://github.com/Shin-ichi-Minato/SAPPOROBDD}}とTdZDD\footnote{\scriptsize{https://github.com/kunisura/TdZdd}}を使用した． 
+本稿では一部の結果を抜粋して掲載する．表\ref{table:input}は入力データのサイズを表し，表\ref{table:huristic}では，ヒューリスティクスを用いて導出した$Upper$と$Lower$の値を示している．
+表\ref{table:result_r}と表\ref{table:answer_h}では，それぞれの手法において生成したZDDの結果を表しており，nodeはZDDのノード数，solveは解の個数，timeは実行時間，memはメモリ消費量を示している．
+
+実験結果では，ほぼ全ての都道府県でヒューリスティクスを用いた手法が，ratioを用いる手法に比べて実行時間とメモリ消費量は大きく削減されていた．長野県は$ratio$=1.4ではメモリ不足で解が得られなかったものの，ヒューリスティクスの方では2.3秒で解を得ることができた．ただし，大阪府は$Upper$と$Lower$の差が大きく，どちらの手法もメモリ不足で解を得られなかった．
+
+\begin{table}
+　　　\small
+  \caption{$ratio=1.4$を用いたZDD構築結果}
+  \label{table:result_r}
+  \centering
+  \begin{tabular}{r|rrrr}
+    \hline
+    id & node & solve & time(sec) & mem(MB) \\
+    \hline\hline
+    4 & 6{,}581 & 40{,}106 & 3.38 & 652 \\
+    6 & 319{,}171 & 7{,}493{,}473 & 33.81 & 6{,}702 \\
+    8 & 1{,}077{,}156 & 36{,}745{,}326 & 212.75 & 30{,}690 \\
+    20 & N/A & N/A & N/A & N/A \\
+    27 & N/A & N/A & N/A & N/A \\
+  \end{tabular}
+\end{table}
+
+\begin{table}
+  \small
+  \caption{ヒューリスティクスを用いたZDD構築結果}
+  \label{table:answer_h}
+  \centering
+  \begin{tabular}{r|rrrr}
+    \hline
+    id & node & solve & time(sec) & mem(MB) \\
+    \hline\hline
+    4 & 55 & 2 & 0.01 & 4 \\
+    6 & 4{,}416 & 541 & 0.08 & 19 \\
+    8 & 1{,}340 & 390 & 0.02 & 6 \\
+    20 & 10{,}302 & 17{,}657 & 2.3 & 471 \\
+    27 & N/A & N/A & N/A & N/A \\
+  \end{tabular}
+\end{table}
+
+\section{結論}
+本研究では，選挙区割問題に対して，ヒューリスティクスで得られる解を利用し，効率的にZDDを構築できることを提案した．
+$ratio$で制約を決める既存手法では，人の手でZDDが構築可能な値を探索しなければならなかったが，提案手法でその作業を不要にし，さらにZDD構築において計算時間と消費メモリを大幅に削減する効果が得られることを確認した．
+\section*{謝辞}
+ZDDの実装にあたって多大なるご協力をいただいた川原純准教授（京都大）に心から感謝いたします．
+%%%%%%%%% ここから参考文献 %%%%%%%%%%%%%%%%%%%%%%%
+\begin{thebibliography}{9}
+\bibitem{kawahara}
+  Kawahara, J. et al.: Generating All Patterns of Graph Partition Within a Disparity Bound, WALCOM, pp. 119-131 (2017).
+\bibitem{minato}
+  Minato, S.: Zero-suppressed BDDs for set manipulation in combinatorial problems,
+  Proceedings of the 30th international Design Automation Conference,
+  pp. 272-277 (1993).
+\end{thebibliography}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

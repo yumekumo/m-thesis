@@ -1,0 +1,209 @@
+﻿\documentclass[a4j,12pt]{jreport}
+%\documentclass{jreport}
+\usepackage[dvipdfmx]{graphicx}
+% \usepackage[dvipdfmx]{graphics}
+\usepackage{amsmath,amssymb}
+% \usepackage{amsmath}
+%\usepackage{pxjahyper}
+\usepackage{here}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{hhline} 
+\usepackage[hang,small,bf]{caption}
+\usepackage[subrefformat=parens]{subcaption}
+\usepackage{url}
+\captionsetup{compatibility=false}
+
+\def\syaji{ \chapter*{謝辞} \addcontentsline{toc}{chapter}{謝辞}}
+\renewcommand{\bibname}{参考文献}
+\setlength{\textheight}{\paperheight}
+\setlength{\topmargin}{4.6mm}
+\addtolength{\topmargin}{-\headheight}
+\addtolength{\topmargin}{-\headsep}
+\addtolength{\topmargin}{-\headheight}
+\addtolength{\textheight}{-60mm}
+
+\setlength{\textwidth}{\paperwidth}
+\setlength{\oddsidemargin}{-0.4mm}
+\setlength{\evensidemargin}{-0.4mm}
+\addtolength{\textwidth}{-50mm}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%
+% 表紙
+%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{empty}
+\begin{center}
+\begin{Large}
+\vspace*{0.7cm}
+{\large 中央大学大学院理工学研究科情報工学専攻\\修士論文}\\
+\vspace*{2.5cm}
+{\bf 修士論文作成の手引き}\\
+\vspace*{0.7cm}
+{\sf Guidelines for the Preparation of a Master's Thesis}\\
+\vspace*{6.5cm}
+草野 みどり\\
+Midori KUSANO\\
+学籍番号\hspace*{1zw}11N8100099A\\
+\vspace*{2.5cm}
+指導教員\hspace*{1zw} 中央 太郎 教授\\
+\vspace*{2.5cm}
+20XX年3月\\
+\end{Large}
+\end{center}
+
+
+%%%%%%%%%%%%%%%%%%%%%
+% 概要
+%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\renewcommand{\baselinestretch}{1.25} \selectfont
+\pagenumbering{roman}
+
+
+\begin{center} {\large \bf{概　要}} \end{center}
+
+要約には論文の内容を1ページ以内で総括的に述べる．要約の直後に，論文の内容を表す5語程度以内のキーワードを記す．
+
+
+\vspace{1zw} \noindent
+{\bf キーワード: }修士論文，審査，概要，発表．
+
+%%%%%%%%%%%%%%%%%%%%%
+% 目次
+%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+
+
+\newpage
+\pagenumbering{arabic}
+
+%%%%%%%%%%%%%%%%%%%%%
+% 1章
+%%%%%%%%%%%%%%%%%%%%%
+\chapter{はじめに} \label{chapter:1}
+
+修士論文の書き方は修士論文要旨（年報）のテンプレートに記載されているので，参考にすること．
+
+
+
+%%%%%%%%%%%%%%%%%%%%%
+% 2章
+%%%%%%%%%%%%%%%%%%%%%
+\chapter{修士論文の書き方} \label{chapter:2}
+
+
+\section{図と表の例} \label{section:figure_table}
+
+図・表には通し番号と見出し(caption)を付け，本文中で当該の図・表に言及する．また，単位や目盛を正確に記す．
+図のタイトルは図の下に，表のタイトルは表の上に書く．
+
+例を図\ref{fig:logo}と表\ref{tab:results}に示す．
+第\ref{chapter:2}章の図には図2.1, 図2.2, 図2.3，…のように番号が振られ，
+第\ref{chapter:2}章の表には表2.1, 表2.2, 表2.3，…のように，図とは独立に番号が振られる．
+
+
+\begin{figure}[b]
+    \centering
+    \includegraphics[scale=0.5]{logo_color.png}
+    \caption{情報工学科のロゴ}
+    \label{fig:logo}
+  \end{figure}
+
+
+\begin {table}[t]
+    \centering
+  \caption{表のタイトル}
+  \label{tab:results}
+  \begin {tabular}{ccc} \hline
+     項目1 & 項目2 & 項目3 \\ \hline
+    データ1 & データ2 & データ3 \\
+    データ1 & データ2 & データ3 \\
+    データ1 & データ2 & データ3 \\ \hline
+  \end {tabular}
+\end {table}
+
+
+\section{参考文献の書き方}
+
+一例として，和文の著書\cite{suetake}，和文の論文誌\cite{kusano}，英文の編書\cite{fuortes}，
+英文の論文誌\cite{rice}，国際会議\cite{guibas}，修士論文\cite{chudai}，電子雑誌\cite{iwama}，Webページ\cite{IPSJ}を，
+2ページの参考文献の節に載せる．{\em 参考文献には信頼性が高く，後世に残るものを載せるように注意せよ．}
+
+書くべき情報は以下のとおりである．
+\begin{itemize}
+\item 和文の著書: 著者，書名，シリーズ名(あれば)，発行所，都市，年．
+\item 和文の論文誌: 著者，題名，誌名，巻，号，頁，年．
+\item 英文の編書: 編者，書名，発行所，都市，年．
+\item 英文の論文誌: 著者，題名，誌名，巻，号，頁，年．
+\item 国際会議: 著者，題名，予稿集名，都市，コード等，頁，年．
+\item 修士論文: 著者，題名，機関名，年．
+\item 電子雑誌: 著者，題名，誌名，巻，号，頁（オンライン），DOI，西暦年．
+\item Webページ: 著者，Webページの題名，Webサイトの名称（オンライン）（ただし，著者と同じ場合は省略可），入手先〈URL〉（参照日付）．
+\end{itemize}
+英語の文献はすべて半角文字で書く．参考文献には本文で引用した文献のみ載せる．
+情報処理学会の論文誌の原稿執筆案内\cite{IPSJ}も参考になる．
+
+通し番号は，引用順または著者名のアルファベット順に付ける．
+文献の引用のしかたは分野ごとに異なるので，{\em 自己流では書かず，当該分野の論文誌などを参考にする}こと．
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%
+% 〇章
+%%%%%%%%%%%%%%%%%%%%%
+\chapter{おわりに} \label{chapter:7}
+
+結論には，研究の成果や意義その他を総括的に{\em 過去形}で述べる．
+
+
+
+%謝辞
+\syaji
+\par
+本研究を進めるにあたり，大変多くのご指導，ご助言を頂いた
+中央大学理工学部情報工学科の中央太郎教授に深く感謝いたします．
+また，多大なるご助言，ご協力を頂いた〇〇研究室の皆様には大変お世話になりました．
+心から感謝いたします．
+
+
+%参考文献
+\begin{thebibliography}{99}
+\addcontentsline{toc}{chapter}{参考文献}
+
+
+\bibitem{suetake}
+末武国弘，科学論文をどう書くか，講談社ブルーバックス，講談社，東京，1981. 
+
+\bibitem{kusano}
+草野花子，中大太郎，パラメトリック増幅器，電子情報通信学会論文誌，vol.~J62-B, no.~1, pp.~20--27, 1979. 
+
+\bibitem{fuortes}
+M. G. F. Fuortes, ed., \textit{Handbook of Sensory Physiology}, Springer-Verlag, Berlin, 1972.
+
+\bibitem{rice}
+W. Rice, A. C. Wine, and B. D. Grain, Diffusion of impurities during epitaxy, \textit{Proc. IEEE}, vol.~52, no.~3, pp.~284--290, 1964.
+
+\bibitem{guibas}
+L. J. Guibas and R. Sedgewick, A dichromatic framework for balanced trees, 
+\textit{Proc. 19th IEEE Sympos. Found. Comput. Sci.}, Ann Arbor, pp.~8--21, 1978.
+
+\bibitem{chudai}
+中大次郎，マルチメディアと数理工学，中央大学大学院理工学研究科情報工学専攻修士論文，1998.
+
+\bibitem{iwama}
+K. Iwama, A. Kawachi, and S. Yamashita, Quantum biased oracles, \textit{IPSJ Digital Courier}, vol.~1, pp.~461--469 (online), DOI: 10.2197/ipsjdc.1.461, 2005.
+
+\bibitem{IPSJ}
+情報処理学会，論文誌ジャーナル（IPSJ Journal）原稿執筆案内，情報処理学会（オンライン），入手先〈\url{https://www.ipsj.or.jp/journal/submit/ronbun_j_prms.html}〉（参照2022-04-25）．
+
+
+\end{thebibliography}
+
+%関連論文, 仕様はthebibliographyと同一. 
+%\begin{therelatedreference}{99}
+%\end{therelatedreference}
+
+\end{document}

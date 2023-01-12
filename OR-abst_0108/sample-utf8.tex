@@ -1,0 +1,185 @@
+%
+%  アブストラクトのサンプルファイル (UTF-8)
+%
+%   Updated: 2016/12/01 Kou Fujimoto (kou-f@mail.dendai.ac.jp)
+%   prepared by Takayuki Okuno (t_okuno@ms.kagu.tus.ac.jp)
+%
+\documentclass[twoside,twocolumn,11pt]{jarticle}  % 2段組の場合
+%\documentclass[11pt]{jarticle}   % 1段組の場合
+\usepackage{latexsym,amssymb}
+\usepackage[dvips]{graphicx} % epsファイルを使う場合
+\usepackage{orsabs-utf8}
+%%%%%%%%%% Title %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{アブストラクト書式のサンプル}
+\author{\begin{tabular}{lll@{}ll}
+        0101XXX3 & 凹凸大学 & *&学会太郎 & GAKKAI Tarou \\
+        0209XXX5 & 凸凹企画 &  &中部花子 & NAKABE Hanako
+        \end{tabular}}
+\date{} 
+\begin{document}
+\maketitle
+%%%%%%%%%% ここから本文%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{はじめに}
+
+%このファイルは，2006年OR学会秋季研究発表会で発表を希望される方が
+このファイルは，日本オペレーションズ・リサーチ学会\{春，秋\}季研究発表会で発表を希望される方が
+\LaTeXe \cite{okumura,otobe97}を用いてアブストラクトを執筆する
+際の原稿作成例です．
+このファイルとスタイルファイル(\texttt{orsabs-utf8.sty})をお使いいただけば，
+余白等の設定をしていただかなくても，すでに設定済みです．
+\LaTeXe をご使用になる際は，出来るだけこのファイルを
+利用して原稿を作成することをお勧めいたします．
+原稿の構成については特に決まりはありませんので，自由な形式で原稿作成していただいて結構です．
+ただし，アブストラクト集の作成上問題が発生する可能性がありますので，
+\textbf{余白の変更は避けてください}．
+各ページには，ヘッダを差し込む都合上，特に上マージンの変更は厳禁です．
+
+\section{発表者の方へ}
+\newcommand{\TM}{$^{\circledR}$}
+
+%日本オペレーションズ・リサーチ学会２００６年秋季研究発表会に発表を希望される方は，以下の手順に従ってアブストラクトの原稿を作成してください．
+日本オペレーションズ・リサーチ学会\{春，秋\}季研究発表会に発表を希望される方は，
+以下の手順に従ってアブストラクトの原稿を作成してください．
+
+\section{アブストラクトの書き方}
+アブストラクト集はA4版で作成された著者の原稿をそのままフォトコピーして，B5版にオフセット印刷します．
+形式が不備の場合は印刷ができない場合がございますので，アブストラクト作成の際には以下の注意書きをお読みいただくよう，
+お願いいたします． 
+\begin{itemize}
+\item  アブストラクト原稿は発表1件につき2ページです．用紙サイズをA4版として作成してください．
+	各ページの余白は上下30mm，左右20mmとしてください．
+	余白部分には統一したヘッダーとして書名，フッターとしてページ番号が挿入されますので，
+	必ず，空白のままにしておいてください．
+	縮小印刷されますので，フォントサイズは（本文，図表とも）9pt．以上でお願いします．
+	アブストラクト集はモノクロ印刷されます． 
+\item  発表題目，発表者氏名・所属は規定の位置に書いてください．
+  \begin{enumerate}
+  \item  発表題目は１枚目の最上段に本文より大きめのフォントを使い書いてください． 
+  \item  １行空けてその下に，発表者の「会員番号」，「所属」，「氏名」，「ローマ字読み」を書いてください．
+	ローマ字読みは姓，名の順，姓はすべて大文字，名は頭文字だけ大文字，としてください．
+	連名の場合は同じ形式で全員の氏名を書き，登壇者の姓の前に＊印を付けてください．
+  \end{enumerate}
+\item  図・表・写真などは縮小されても識別できるように，また，モノクロ印刷しても識別できるように，
+	投稿する前にあらかじめテスト印刷して仕上がりを確かめてください． 
+\end{itemize}
+
+\begin{description}
+%\item[注意１]  アブストラクトのファイル名は「abst\_name.pdf」としてください．name の部分は発表者等の名前（姓のみ）のローマ字読みを入れてください．（例：abst\_nakabe.pdf）
+\item[注意]  図表・写真が多い場合はファイルサイズが大きくなり，途中で転送を拒否される場合もありますので，あらかじめご確認ください．
+\end{description}
+
+
+\subsection{\TeX の余白設定}
+標準のスタイルファイル\texttt{orsabs-utf8.sty}では余白が設定されているため，
+パラメータを上書きしない限りは設定を気にする必要はありません．
+\texttt{orsabs-utf8.sty}を原稿ソースファイルと同じディレクトリに置き，
+以下のように\verb@\usepackage@コマンドで読み込んでください．
+\begin{verbatim}
+  \documentclass[twoside,twocolumn,11pt]{
+    jarticle}
+  \usepackage[dvips]{graphicx}
+  \usepackage{latexsym}
+  \usepackage{orsabs-utf8}
+\end{verbatim} 
+
+標準のスタイルファイルを用いない場合は，以下を参考に設定してください．
+例としてプリアンブルに以下； 
+\begin{verbatim}
+%%% 上下 3cm,  左右 2cm の余白を定義 %%%
+\paperwidth  597pt
+\paperheight 845pt
+\hoffset   -14.0pt
+\voffset    14.5pt
+ \oddsidemargin 0.0pt
+ \evensidemargin 0.0pt
+ \topmargin     0.0pt
+ \headheight    0.0pt
+ \headsep       0.0pt
+\textheight 671.0pt 
+\textwidth  480.5pt
+ \marginparsep   0.0pt
+ \marginparwidth 0.0pt
+ \footskip       0.0pt
+\end{verbatim}
+を記述し，これ以外で長さに関する設定を行わなければ， 上下3cm，左右2cm の余白が確保できます．
+
+\subsection{Word の余白設定}
+原稿作成例\texttt{AbstractSample.docx}ではあらかじめ余白が設定されているため，
+レイアウト等を変更しない限りは設定を気にする必要はありません．
+原稿作成例を用いない場合は，以下のように余白を設定してください（Word2010の場合）． 
+
+\begin{itemize}
+\item \,[ページレイアウト]タブをクリックする．
+\item \,[余白]をクリックし，[ユーザ設定の余白(A)...]を選択する
+\item ページ設定画面の余白タブが表示されるので, 以下のように上下左右の余白を設定する．
+\begin{verbatim}
+  上 30 mm  下 30 mm 
+  左 20 mm  右 20 mm 
+  とじしろ 0 mm    
+\end{verbatim}
+\item ~[OK] をクリックし，ページ設定ウィンドウを閉じる．
+\end{itemize}
+
+\section{PDF の作成方法}
+
+作成したアブストラクトは，Adobe社のAcrobat
+\footnote{Acrobat\TM, Reader\TM, Adobe\TM, Distiller\TM は，Adobe システムズ社の商標登録です．}
+などでPDF形式に変換したうえで投稿をおねがいします．
+
+無償版のAcrobat Readerでは変換できません．
+PDF形式に変換する際は，フォントをすべてインクルードするようにしてください．
+PDFの作成方法は，TeX Wikiの当該ページ\cite{texwiki}などを参考にしてください．
+
+PDF形式に変換したファイルをAdobe 社のAcrobat Readerで印刷し，
+読めることを確認してください．
+フォントの文字化けが生じる可能性がありますので，
+できれば，環境の違うパソコンでも仕上がりを確かめてください．
+
+また，PDF に変換するとき余白が変更される場合があります．
+Acrobat Distiller を用いる場合，
+用紙サイズの初期設定がA4 サイズ($210\times 297$mm) ではなく
+レターサイズ($215.9\times 279.4$mm) になっています．
+最近の\TeX 環境およびDistillerを利用した場合は，
+原稿サイズを自動認識してA4サイズのPDFファイルを生成しますが，
+古い環境ではレターサイズのPDFファイルが生成されてしまい，
+内容が上にずれた印象になります．
+
+フォントがすべてインクルードされているか，
+原稿サイズが適切であるかを確認するには，
+Acrobat Readerで [ファイル] メニューからプロパティを選択し，
+以下の点を確認してください．
+\begin{itemize}
+\item \,[フォント]タブで使用フォントがすべて「埋め込みサブセット」になっていることを確認する．
+\item \,[概要]タブでページサイズが$210\times 297$mmになっていることを確認する
+（$\pm 0.2$mm程度のずれはあります）．
+\end{itemize}
+
+% \section{PDF の印刷方法 }
+% \begin{enumerate}
+% \item PDF を起動し，メニューの[ファイル/印刷]で印刷ウィンドウを開く. 
+% \item \,[ページの拡大/縮小] を "なし" にする． [自動回転と中央配置] にチェックがついている場合は，チェックをはずす． 
+% \\      これらが付いたままになっていると，余白がずれたり， 内容が全体的に縮小されたりします． 必ずこの設定を確認してください． 
+% \item~  [ OK ] (または [印刷]) をクリックして印刷する． 印刷後は，余白の設定などが正しく印刷されていることを確認する． 
+% \end{enumerate}
+
+
+\section{おわりに}
+
+このファイルに関するご質問等がありましたら，作成者までお問い合わせ下さい．
+%%%%%%%%% ここから参考文献 %%%%%%%%%%%%%%%%%%%%%%%
+\begin{thebibliography}{9}
+\bibitem{okumura}
+  奥村晴彦: [改訂版] \LaTeXe 美文書作成入門,
+  技術評論社 (2000).
+\bibitem{otobe97}
+  乙部厳己: p\LaTeXe  for WINDOWS Another Manual,
+  ソフトバンク(1997).
+\bibitem{texwiki}
+  TeX Wiki PDFの作り方,\\
+  \verb@https://texwiki.texjp.org/\@\\
+  \verb@?PDF%E3%81%AE%E4%BD%9C%E3%82%8A%E6%96%B9@,
+  2016/12/01.
+\end{thebibliography}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

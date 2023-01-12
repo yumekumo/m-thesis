@@ -1,0 +1,136 @@
+﻿\documentclass[a4j,12pt]{jreport}
+%\documentclass{jreport}
+\usepackage[dvipdfmx]{graphicx}
+% \usepackage[dvipdfmx]{graphics}
+\usepackage{amsmath,amssymb}
+% \usepackage{amsmath}
+%\usepackage{pxjahyper}
+\usepackage{here}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{hhline} 
+\usepackage[hang,small,bf]{caption}
+\usepackage[subrefformat=parens]{subcaption}
+\usepackage{url}
+\captionsetup{compatibility=false}
+
+\def\syaji{ \chapter*{謝辞} \addcontentsline{toc}{chapter}{謝辞}}
+\renewcommand{\bibname}{参考文献}
+\setlength{\textheight}{\paperheight}
+\setlength{\topmargin}{4.6mm}
+\addtolength{\topmargin}{-\headheight}
+\addtolength{\topmargin}{-\headsep}
+\addtolength{\topmargin}{-\headheight}
+\addtolength{\textheight}{-60mm}
+
+\setlength{\textwidth}{\paperwidth}
+\setlength{\oddsidemargin}{-0.4mm}
+\setlength{\evensidemargin}{-0.4mm}
+\addtolength{\textwidth}{-50mm}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%
+% 表紙
+%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{empty}
+\begin{center}
+\begin{Large}
+\vspace*{0.7cm}
+{\large 中央大学大学院理工学研究科情報工学専攻\\修士論文}\\
+\vspace*{2.3cm}
+{\bf 選挙区割問題に対するヒューリスティクスを用いた\\ZDD構築の効率化}\\
+\vspace*{0.7cm}
+{\sf Efficient ZDD Construction Using Heuristics \\for the Electoral Districting Problem}\\
+\vspace*{5cm}
+千原 良太\\
+Ryota CHIHARA\\
+学籍番号\hspace*{1zw}21N8100011I\\
+\vspace*{2.5cm}
+指導教員\hspace*{1zw} 今堀 慎治 教授\\
+\vspace*{2.5cm}
+2023年3月\\
+\end{Large}
+\end{center}
+
+
+%%%%%%%%%%%%%%%%%%%%%
+% 概要
+%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\renewcommand{\baselinestretch}{1.25} \selectfont
+\pagenumbering{roman}
+
+
+\begin{center} {\large \bf{概　要}} \end{center}
+
+要約には論文の内容を1ページ以内で総括的に述べる．要約の直後に，論文の内容を表す5語程度以内のキーワードを記す．
+
+
+\vspace{1zw} \noindent
+{\bf キーワード: }修士論文，審査，概要，発表．
+
+%%%%%%%%%%%%%%%%%%%%%
+% 目次
+%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+
+
+\newpage
+\pagenumbering{arabic}
+
+%%%%%%%%%%%%%%%%%%%%%
+% 本文
+%%%%%%%%%%%%%%%%%%%%%
+\input{chapter1.tex}
+\input{chapter2.tex}
+\input{chapter3.tex}
+
+
+%謝辞
+\syaji
+\par
+本研究を進めるにあたり，大変多くのご指導，ご助言を頂いた
+中央大学理工学部情報工学科の中央太郎教授に深く感謝いたします．
+また，多大なるご助言，ご協力を頂いた〇〇研究室の皆様には大変お世話になりました．
+心から感謝いたします．
+
+
+%参考文献
+\begin{thebibliography}{99}
+\addcontentsline{toc}{chapter}{参考文献}
+
+
+\bibitem{suetake}
+末武国弘，科学論文をどう書くか，講談社ブルーバックス，講談社，東京，1981. 
+
+\bibitem{kusano}
+草野花子，中大太郎，パラメトリック増幅器，電子情報通信学会論文誌，vol.~J62-B, no.~1, pp.~20--27, 1979. 
+
+\bibitem{fuortes}
+M. G. F. Fuortes, ed., \textit{Handbook of Sensory Physiology}, Springer-Verlag, Berlin, 1972.
+
+\bibitem{rice}
+W. Rice, A. C. Wine, and B. D. Grain, Diffusion of impurities during epitaxy, \textit{Proc. IEEE}, vol.~52, no.~3, pp.~284--290, 1964.
+
+\bibitem{guibas}
+L. J. Guibas and R. Sedgewick, A dichromatic framework for balanced trees, 
+\textit{Proc. 19th IEEE Sympos. Found. Comput. Sci.}, Ann Arbor, pp.~8--21, 1978.
+
+\bibitem{chudai}
+中大次郎，マルチメディアと数理工学，中央大学大学院理工学研究科情報工学専攻修士論文，1998.
+
+\bibitem{iwama}
+K. Iwama, A. Kawachi, and S. Yamashita, Quantum biased oracles, \textit{IPSJ Digital Courier}, vol.~1, pp.~461--469 (online), DOI: 10.2197/ipsjdc.1.461, 2005.
+
+\bibitem{IPSJ}
+情報処理学会，論文誌ジャーナル（IPSJ Journal）原稿執筆案内，情報処理学会（オンライン），入手先〈\url{https://www.ipsj.or.jp/journal/submit/ronbun_j_prms.html}〉（参照2022-04-25）．
+
+
+\end{thebibliography}
+
+%関連論文, 仕様はthebibliographyと同一. 
+%\begin{therelatedreference}{99}
+%\end{therelatedreference}
+
+\end{document}
