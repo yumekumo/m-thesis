@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.euc) (TeX Live 2022) (preloaded format=platex 2023.1.11)  12 JAN 2023 18:06
+This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.euc) (TeX Live 2022) (preloaded format=platex 2023.1.11)  13 JAN 2023 18:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -229,23 +229,15 @@ LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 65.
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 71.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 89.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 71.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 89.
  [1]
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <24.88> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 76.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 94.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <24.88> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 76.
- (latex_out/main.toc
-LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
- (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
- (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 94.
+ (latex_out/main.toc)
 \tf@toc=\write3
 \openout3 = `main.toc'.
 
@@ -257,46 +249,56 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ]
 第 2 章
-File: logo_color.png Graphic file (type bmp)
-<logo_color.png>
-LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10.95> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 20.
-LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10.95> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 20.
-LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
-(Font)              No change on input line 42.
-[2
+) (./chapter3.tex [2
 
 ]
-LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
-(Font)              No change on input line 59.
-) (./chapter3.tex [3]
 第 3 章
-LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
-(Font)              No change on input line 6.
-) [4
+) (./chapter4.tex [3
 
-] [5
+]
+第 4 章
+) (./chapter5.tex [4
+
+]
+第 5 章
+) (./chapter6.tex [5
+
+]
+第 6 章
+) (./chapter7.tex [6
+
+]
+第 7 章
+) [7
+
+] [8
 
 ]
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 111.
+(Font)              No change on input line 132.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 114.
+(Font)              No change on input line 135.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 118.
+(Font)              No change on input line 139.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 124.
- [6
+(Font)              No change on input line 145.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 148.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 148.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [9
 
 ] (latex_out/main.aux) ) 
 Here is how much of TeX's memory you used:
- 4551 strings out of 476552
- 75173 string characters out of 5803662
- 1854803 words of memory out of 5000000
- 25111 multiletter control sequences out of 15000+600000
- 528946 words of font info for 98 fonts, out of 8000000 for 9000
+ 4544 strings out of 476552
+ 74992 string characters out of 5803662
+ 1853803 words of memory out of 5000000
+ 25098 multiletter control sequences out of 15000+600000
+ 527075 words of font info for 91 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 55i,8n,63p,335b,530s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 55i,5n,63p,335b,400s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on latex_out/main.dvi (9 pages, 9652 bytes).
+Output written on latex_out/main.dvi (12 pages, 7576 bytes).
