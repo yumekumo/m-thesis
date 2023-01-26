@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.euc) (TeX Live 2022) (preloaded format=platex 2023.1.11)  25 JAN 2023 23:57
+This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.euc) (TeX Live 2022) (preloaded format=platex 2023.1.11)  26 JAN 2023 16:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -257,45 +257,45 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ] [2]
 第 2 章
-) (./chapter3.tex [3
+[3
 
-]
+]) (./chapter3.tex [4]
 第 3 章
-) (./chapter4.tex [4
+) (./chapter4.tex [5
 
 ]
 第 4 章
-) (./chapter5.tex [5
+) (./chapter5.tex [6
 
 ]
 第 5 章
-) (./chapter6.tex [6
+) (./chapter6.tex [7
 
 ]
 第 6 章
-) [7
+) [8
 
-] [8
+] [9
 
 ]
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 131.
+(Font)              No change on input line 137.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 134.
-LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 138.
+(Font)              No change on input line 140.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
 (Font)              No change on input line 144.
- [9
+LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
+(Font)              No change on input line 150.
+ [10
 
 ] (latex_out/main.aux) ) 
 Here is how much of TeX's memory you used:
- 4538 strings out of 476552
- 74911 string characters out of 5803662
+ 4540 strings out of 476552
+ 74929 string characters out of 5803662
  1857803 words of memory out of 5000000
- 25095 multiletter control sequences out of 15000+600000
+ 25097 multiletter control sequences out of 15000+600000
  527075 words of font info for 91 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  55i,6n,63p,335b,306s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on latex_out/main.dvi (13 pages, 20524 bytes).
+Output written on latex_out/main.dvi (14 pages, 25736 bytes).
