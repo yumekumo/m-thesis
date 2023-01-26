@@ -27,7 +27,11 @@
         {
             "name": "latexmk",
             "command": "latexmk",
-            "args": ["-outdir=%OUTDIR%","%DOC%.tex"]
+            "args": [
+                "-interaction=nonstopmode",
+                "-outdir=%OUTDIR%",
+                "%DOC%.tex",
+            ]
         },
     ]
 
