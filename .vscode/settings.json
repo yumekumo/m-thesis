@@ -33,7 +33,8 @@
                 "%DOC%.tex",
             ]
         },
-    ]
+    ],
+    "editor.tabSize": 2
 
     //----other settings----
 }
