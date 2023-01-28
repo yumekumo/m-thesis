@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.euc) (TeX Live 2022) (preloaded format=platex 2023.1.11)  27 JAN 2023 18:58
+This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.euc) (TeX Live 2022) (preloaded format=platex 2023.1.11)  29 JAN 2023 02:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -287,19 +287,24 @@ LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10.95> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 31.
 [6
 
-]) (./chapter4.tex [7]
+]
+File: img/delete_zdd.png Graphic file (type bmp)
+<img/delete_zdd.png>
+File: img/share_zdd.png Graphic file (type bmp)
+<img/share_zdd.png>
+) (./chapter4.tex [7] [8]
 第 4 章
-) (./chapter5.tex [8
+) (./chapter5.tex [9
 
 ]
 第 5 章
-) (./chapter6.tex [9
+) (./chapter6.tex [10
 
 ]
 第 6 章
-) [10
+) [11
 
-] [11
+] [12
 
 ]
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
@@ -310,16 +315,16 @@ LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
 (Font)              No change on input line 154.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
 (Font)              No change on input line 160.
- [12
+ [13
 
 ] (latex_out/main.aux) ) 
 Here is how much of TeX's memory you used:
- 4631 strings out of 476552
- 76838 string characters out of 5803662
+ 4646 strings out of 476552
+ 77120 string characters out of 5803662
  1859803 words of memory out of 5000000
- 25172 multiletter control sequences out of 15000+600000
+ 25185 multiletter control sequences out of 15000+600000
  530824 words of font info for 107 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  55i,9n,63p,335b,677s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on latex_out/main.dvi (16 pages, 33124 bytes).
+Output written on latex_out/main.dvi (17 pages, 35292 bytes).
