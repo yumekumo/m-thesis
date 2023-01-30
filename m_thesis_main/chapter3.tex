@@ -93,7 +93,7 @@ ZDDは場合分け二分木で集合の表現に不要な頂点と枝を削除�
         \If {$n'$と等価なノード$n''$が既に存在}
           \State $n' \gets n''$
         \EndIf
-        \State $n$の$x$-枝の先を$n'$とする
+        \State $n$の$x$-枝の先を$n'$とする．
         \EndFor
       \EndFor
     \EndFor
@@ -126,8 +126,12 @@ $F_i=(\bigcup_{j=1,\ldots ,i}a_j)\cap (\bigcup_{j=i+1, \ldots, m} a_j)$
 アイテムの総数に対して，フロンティアのサイズが小さければ効率よく計算を行うことができる．
 
 5-7行目の実装は，解く問題の種類によって異なる．
-選挙区割問題のZDDを用いた区割列挙手法では「フロンティア法」を利用する．
+選挙区割問題のZDDを用いた区割列挙手法ではこの「フロンティア法」を利用する．
 詳しいアルゴリズムを次節で説明する．
+
+\section{選挙区割問題におけるZDD}
+
+選挙区割をZDDを列挙するためには，
 
 \section{区割列挙アルゴリズム}
 本節では，川原らが考案した重み付きグラフ分割列挙アルゴリズム\cite{kawahara}
@@ -143,14 +147,24 @@ $F_i=(\bigcup_{j=1,\ldots ,i}a_j)\cap (\bigcup_{j=i+1, \ldots, m} a_j)$
     \State $N_i \gets \emptyset~\mathrm{for}~i=2, \ldots ,m+1$
     \For {$i=1, \ldots , m$}
       \ForAll {$n \in N_i$}
-        
+        \ForAll {$x \in \{0,1\}$}
+          \State $n' \gets \mathrm{MakeNewNode}(n,i,x)$
+          \If {$N' \neq \textbf{0}, \textbf{1} $}
+            \If {$n'$と等価なノード$n''\in N_{i+1}$が既に存在}
+              \State $n' \gets n''$
+            \Else
+              \State $N_{i+1} \gets N_{i+1} \cup \{n'\}$
+            \EndIf
+          \EndIf
+          \State $n$の$x$-枝の先を$n'$とする．
+        \EndFor
       \EndFor
     \EndFor
   \end{algorithmic}
 \end{algorithm}
 
 \begin{breakablealgorithm}
-  \caption{MakeNewNode（ZDDの新しいノードを作成する関数）}
+  \caption{MakeNewNode}
   \label{make_new_node}
   \begin{algorithmic}[1]
     \Require $n,i,x$
@@ -196,7 +210,7 @@ $F_i=(\bigcup_{j=1,\ldots ,i}a_j)\cap (\bigcup_{j=i+1, \ldots, m} a_j)$
     \If {$n'.\mathrm{cc} = div$}
       \State \textbf{return 1}
     \Else
-      \State \State \textbf{return 0}
+      \State \textbf{return 0}
     \EndIf
   \EndIf
   \State \textbf{return }$n'$
