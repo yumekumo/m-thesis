@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.euc) (TeX Live 2022) (preloaded format=platex 2023.1.11)  30 JAN 2023 13:25
+This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.euc) (TeX Live 2022) (preloaded format=platex 2023.1.11)  30 JAN 2023 16:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -188,7 +188,7 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup7
-) (/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-dvips.def
+) (./env/breakablealgorithm.tex) (/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-dvips.def
 File: l3backend-dvips.def 2022-10-26 L3 backend support: dvips
 \l__pdf_internal_box=\box72
 \g__pdf_backend_object_int=\count286
@@ -200,46 +200,46 @@ File: l3backend-dvips.def 2022-10-26 L3 backend support: dvips
 ) (latex_out/main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <17.28> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 45.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 48.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <17.28> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 45.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 48.
  [1
 
 ]
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 68.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 71.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 68.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 71.
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 92.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 95.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 92.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 95.
  [1]
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <24.88> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 97.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 100.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <24.88> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 97.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 100.
  (latex_out/main.toc
 LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -266,12 +266,7 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 第 2 章
 [3
 
-]
-Overfull \hbox (2.21312pt too wide) in paragraph at lines 59--64
-[]\JY1/gt/m/n/12 入力デ ータ \JY1/mc/m/n/12 ： 市区町村集合 $\OML/cmm/m/it/12 V$\JY1/mc/m/n/12 ， 選挙区数 $\OML/cmm/m/it/12 m$\JY1/mc/m/n/12 ， ブロ ッ ク集合 $\U/rsfs/m/n/12 B$ \JY1/mc/m/n/12 を表す行列 $\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 b[]\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 i \OT1/cmr/m/n/12 = 1\OML/cmm/m/it/12 ; :::; n;  []j \OT1/cmr/m/n/12 =
- []
-
-[4]) (./chapter3.tex [5]
+] [4]) (./chapter3.tex [5]
 第 3 章
 File: img/binary_graph.png Graphic file (type bmp)
 <img/binary_graph.png>
@@ -292,39 +287,30 @@ File: img/delete_zdd.png Graphic file (type bmp)
 <img/delete_zdd.png>
 File: img/share_zdd.png Graphic file (type bmp)
 <img/share_zdd.png>
- [7]) (./chapter4.tex [8] [9]
+ [7] [8] [9]) (./chapter4.tex [10]
 第 4 章
-) (./chapter5.tex [10
+) (./chapter5.tex [11
 
 ]
 第 5 章
-) (./chapter6.tex [11
+) (./chapter6.tex [12
 
 ]
 第 6 章
-) [12
+) [13
 
-] [13
+] [14
 
-]
-LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 157.
-LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 160.
-LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 164.
-LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 170.
- [14
+] [15
 
-] [15] (latex_out/main.aux) ) 
+] (latex_out/main.aux) ) 
 Here is how much of TeX's memory you used:
- 4681 strings out of 476552
- 77661 string characters out of 5803662
+ 4688 strings out of 476552
+ 77884 string characters out of 5803662
  1859803 words of memory out of 5000000
- 25220 multiletter control sequences out of 15000+600000
- 530824 words of font info for 107 fonts, out of 8000000 for 9000
+ 25225 multiletter control sequences out of 15000+600000
+ 530308 words of font info for 105 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  55i,9n,63p,327b,677s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on latex_out/main.dvi (19 pages, 39628 bytes).
+Output written on latex_out/main.dvi (19 pages, 41572 bytes).

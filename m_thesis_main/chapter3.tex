@@ -86,11 +86,11 @@ ZDDは場合分け二分木で集合の表現に不要な頂点と枝を削除�
     \State 根ノード$n_{root}$を作成
     \For {$i=1,...,m$} // $m$:アイテム数
       \For {既に作成済みの$i$段目の各ノード$n$について}
-      \For {$x=0,1$} // 0-枝，1-枝の処理
-        \State 終端条件の判定(a)
+      \ForAll {$x \in \{0,1\}$} // 0-枝，1-枝の処理
+        \State 終端条件の判定
         \State 新しいノード$n'$を作成($i+1$段目とする)
-        \State $n'$の情報を更新(b)
-        \If {$n'$と等価なノード$n''$が既に存在(c)}
+        \State $n'$の情報を更新
+        \If {$n'$と等価なノード$n''$が既に存在}
           \State $n' \gets n''$
         \EndIf
         \State $n$の$x$-枝の先を$n'$とする
@@ -121,15 +121,86 @@ $n$の$x$-枝の先を0-終端に接続する．
 $F_i=(\bigcup_{j=1,\ldots ,i}a_j)\cap (\bigcup_{j=i+1, \ldots, m} a_j)$
 を用いることから，一般的に「フロンティア法」と呼ばれる．
 フロンティアは，処理が途中のアイテムのみを保持するため，
-\textbf{Algorithm 1}の(a)(b)(c)では，フロンティアに含まれる頂点の情報のみ扱えばよい．
+\textbf{Algorithm 1}の5行目の処理では，
+フロンティアに含まれるノードの情報のみ参照すればよい．
 アイテムの総数に対して，フロンティアのサイズが小さければ効率よく計算を行うことができる．
 
-(a)(b)(c)の処理手順は，解く問題の種類によって異なる．
+5-7行目の実装は，解く問題の種類によって異なる．
 選挙区割問題のZDDを用いた区割列挙手法では「フロンティア法」を利用する．
 詳しいアルゴリズムを次節で説明する．
 
 \section{区割列挙アルゴリズム}
+本節では，川原らが考案した重み付きグラフ分割列挙アルゴリズム\cite{kawahara}
+を用いて，選挙区割を列挙するアルゴリズムを説明する．
 
 \subsection{人口制約なしの場合}
+
+\begin{algorithm}
+  \caption{ConstructZDD}
+  \label{construct_zdd}
+  \begin{algorithmic}[1]
+    \State $N_1 \gets \{n_{root}\}$
+    \State $N_i \gets \emptyset~\mathrm{for}~i=2, \ldots ,m+1$
+    \For {$i=1, \ldots , m$}
+      \ForAll {$n \in N_i$}
+        
+      \EndFor
+    \EndFor
+  \end{algorithmic}
+\end{algorithm}
+
+\begin{breakablealgorithm}
+  \caption{MakeNewNode（ZDDの新しいノードを作成する関数）}
+  \label{make_new_node}
+  \begin{algorithmic}[1]
+    \Require $n,i,x$
+    \Ensure $n'$ or \textbf{0} or \textbf{1}
+    \State 引数$i$から$e_i=\{v,w\}$ を取得する．
+    \State $n' \gets n$
+    \ForAll {$u \in \{v,w\}$}
+      \If {$u \notin F_{i-1}$}
+        \State $n'.\mathrm{comp} \gets n'.\mathrm{comp} \cup \{\{u\}\}$
+      \EndIf
+    \EndFor
+    \State $n'.\mathrm{comp}$の$v$と$w$を含む頂点集合をそれぞれ$C_v$と$C_w$とする．
+    \If {$x=1$}
+      \State $n'.\mathrm{comp} \gets (n'.\mathrm{comp} \backslash \{C_v\} \backslash \{C_w\})
+        \cup \{C_v \cup C_w\}$
+      \If {$C_v \neq C_w$ and $\{C_v, C_w\} \in n'.\mathrm{fps}$}
+        \State \textbf{return 0}
+      \Else
+        \State $n'.\mathrm{fps}$内の要素$C_v$と$C_w$を全て
+          $C_v \cup C_w$に置き換える．
+      \EndIf
+    \Else
+      \If {$C_v=C_w$}
+        \State \textbf{return 0}
+      \Else
+        \State $n'.\mathrm{fps} \in n'.\mathrm{fps} \cup \{\{C_v, C_w\}\}$
+      \EndIf
+    \EndIf
+  \ForAll {$u \in \{v,w\}$}
+    \If {$u \in F_i$}
+      \If {$\{u\} \in n'.\mathrm{comp} $}
+        \State $n'.\mathrm{cc} \gets n'.\mathrm{cc} + 1$
+        \If {$n'.\mathrm{cc} > div$}
+          \State \textbf{return 0}
+        \EndIf
+      \EndIf
+      \State $n'.\mathrm{comp}$から$u$を取り除く．
+      \State $n'.\mathrm{fps}$から$\{\{u\},X\}$を取り除く
+        ($\forall X \in n'.\mathrm{comp}$)．
+    \EndIf
+  \EndFor
+  \If {$i=m$}
+    \If {$n'.\mathrm{cc} = div$}
+      \State \textbf{return 1}
+    \Else
+      \State \State \textbf{return 0}
+    \EndIf
+  \EndIf
+  \State \textbf{return }$n'$
+  \end{algorithmic}
+\end{breakablealgorithm}
 
 \subsection{人口制約ありの場合}
