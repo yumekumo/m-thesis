@@ -11,13 +11,17 @@ ZDD構築を効率化する手法について提案する．
 
 \ref{chapter:3}章の人口制約付きZDD構築アルゴリズムでは，
 パラメータとして部分グラフの重み上限$U$,下限$L$を用いた．
-これを，許容格差定数$r$を使わず，ヒューリスティクスの解から，
-最適解にできるだけ近い$U$,$L$を定義する．
-$U$,$L$が最適解に近くなればなるほど，ZDDの構築時に，
+許容格差定数$r$では，$r$の値によって，
+$U, L$の範囲が必要以上に広くなることや
+$U, L$の範囲に解が一つも存在しないことがあり得る．
+既存手法では，$r$の値を都道府県によって手動で調整するものがほとんどである．
+そこで本研究では，選挙区割問題をヒューリスティクスで解き，
+解の中で最大人口の選挙区の重みを$U$,最小人口の選挙区の重みを$L$
+として定義する手法を提案する．
+$U, L$が最適解に近くなればなるほど，ZDDの構築時に，
 最適解でない解候補の枝刈りの回数が多くなる．
 その結果，従来手法に比べて
 メモリの使用量の減少及び計算時間の短縮が期待できる．
-提案手法の全体像を図\ref{heuristics}に記した．
 
 \begin{figure}[htbp]
   \centering
@@ -26,11 +30,74 @@ $U$,$L$が最適解に近くなればなるほど，ZDDの構築時に，
   \label{heuristics}
 \end{figure}
 
+ヒューリスティクスでは，2.2節で定義した問題から．
+評価に用いるスコアを一票の格差$\frac{\mathrm{max}(P)}{\mathrm{min}(P)}$として，
+これを最小化することを目指す．
+
+提案手法の全体像を図\ref{heuristics}に示す．
+始めに選挙区割問題の初期解を生成し，次に一定の確率で
+シフト近傍，スワップ近傍，2連鎖シフト近傍のいずれかを選択する．
+選択した近傍操作を行って近傍解を生成し，
+近傍解が選挙区割の制約(選挙区が連結であるか)を満たすか判定をする．
+制約を満たしている場合には，スコアを計算し，
+焼きなまし法により解の遷移を行う．
+これを一定時間繰り返すことで，解を得ることができる．
+その解から，$U = \mathrm{max}(P), L = \mathrm{min}(P)$
+を定義し，それらを用いてZDDを構築する．
+次節から，初期解生成や近傍探索のアルゴリズムについて詳細に説明する．
+
+\section{初期解生成} \label{section:4.2}
+
+初期解は，2章で定義したグラフ$G$から
+幅優先探索(BFS)を利用したアルゴリズムで構築する．
+初期解生成の擬似コードを\textbf{Algorithm 4}で示す．
 
 
-\section{初期解生成}
+\begin{breakablealgorithm}
+  \caption{MakeInitialSolution}
+  \label{make_initial_solution}
+  \begin{algorithmic}[1]
+    \Require $n, d, ave, adj\_list, w$
+    \Ensure $group$
+    \State $group \gets [-1] * n$
+    \State $P \gets [0] * d$
+    \State 頂点重みが最も大きいものから順に$d$個の頂点番号を配列$root$に保存する．
+    \State $root$.reverse()
+    \For {$i = 1,\ldots,d$}
+      \State $queue \gets \phi $
+      \State $group[root[i]] \gets i$
+      \State $P[i] \gets P[i] + w[nv]$
+      \State $queue$.enqueue$(root[i])$
+      \While{$queue$.size() $\neq 0$ and $P[i] < ave$}
+        \State $v \gets queue$.dequeue()
+        \ForAll {$nv \in adj\_list[v]$}
+          \If {$P[i] \geq ave$}
+            \State break
+          \ElsIf {$group[nv] = -1$}
+            \State $group[nv] \gets i$
+            \State $P[i] \gets P[i] + w[nv]$
+            \State $queue$.enqueue($nv$)
+          \EndIf
+        \EndFor
+      \EndWhile
+    \EndFor
+    \While{$group$の要素に$-1$が含まれる}
+      \For {$vi = 1,\ldots,n$}
+        \If{$group[vi]=-1$}
+          \ForAll {$nv \in adj\_list[v]$}
+            \If{$group[nv] \neq -1$}
+              \State $group[vi] \gets group[nv]$
+              \State break
+            \EndIf
+          \EndFor
+        \EndIf
+      \EndFor
+    \EndWhile
+    \State \textbf{return }$group$
+  \end{algorithmic}
+\end{breakablealgorithm}
 
-初期解は，幅優先探索を
+
 
 \section{近傍操作}
 
