@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.euc) (TeX Live 2022) (preloaded format=platex 2023.1.11)  6 FEB 2023 01:25
+This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.euc) (TeX Live 2022) (preloaded format=platex 2023.1.11)  6 FEB 2023 16:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -326,24 +326,24 @@ File: img/heuristics.png Graphic file (type bmp)
 <img/heuristics.png>
 [15
 
-] [16]
+] [16] [17]
 File: img/shift-neighbor.png Graphic file (type bmp)
 <img/shift-neighbor.png>
 File: img/swap-neighbor.png Graphic file (type bmp)
 <img/swap-neighbor.png>
 File: img/chain-neighbor.png Graphic file (type bmp)
 <img/chain-neighbor.png>
- [17]) (./chapter5.tex [18]
+) (./chapter5.tex [18] [19]
 第 5 章
-) (./chapter6.tex [19
+) (./chapter6.tex [20
 
 ]
 第 6 章
-) [20
-
-] [21
+) [21
 
 ] [22
+
+] [23
 
 ] (latex_out/main.aux) ) 
 Here is how much of TeX's memory you used:
@@ -355,4 +355,4 @@ Here is how much of TeX's memory you used:
  929 hyphenation exceptions out of 8191
  55i,9n,63p,327b,696s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on latex_out/main.dvi (26 pages, 64252 bytes).
+Output written on latex_out/main.dvi (27 pages, 67556 bytes).
