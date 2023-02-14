@@ -275,4 +275,103 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 3.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+) [2
+
+])
+\tf@toc=\write3
+\openout3 = `main.toc'.
+
+ [3] (./chapter1.tex
+第 1 章
+) (./chapter2.tex [1
+
+] [2]
+第 2 章
+[3
+
+] [4]) (./chapter3.tex [5]
+第 3 章
+File: img/binary_graph.png Graphic file (type bmp)
+<img/binary_graph.png>
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 24.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 24.
+File: img/zdd.png Graphic file (type bmp)
+<img/zdd.png>
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10.95> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 33.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10.95> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 33.
+[6
+
+]
+File: img/delete_zdd.png Graphic file (type bmp)
+<img/delete_zdd.png>
+File: img/share_zdd.png Graphic file (type bmp)
+<img/share_zdd.png>
+ [7] [8]
+File: img/kuwari.png Graphic file (type bmp)
+<img/kuwari.png>
+File: img/kuwari_zdd.png Graphic file (type bmp)
+<img/kuwari_zdd.png>
+ [9] [10] [11] [12] [13]) (./chapter4.tex [14]
+第 4 章
+File: img/heuristics.png Graphic file (type bmp)
+<img/heuristics.png>
+[15
+
+] [16] [17]
+File: img/shift-neighbor.png Graphic file (type bmp)
+<img/shift-neighbor.png>
+ [18]
+File: img/swap-neighbor.png Graphic file (type bmp)
+<img/swap-neighbor.png>
+ [19]
+File: img/chain-neighbor.png Graphic file (type bmp)
+<img/chain-neighbor.png>
+ [20]) (./chapter5.tex [21]
+第 5 章
+[22
+
+]
+File: img/g1.png Graphic file (type bmp)
+<img/g1.png>
+File: img/g2.png Graphic file (type bmp)
+<img/g2.png>
+File: img/g3.png Graphic file (type bmp)
+<img/g3.png>
+File: img/g4.png Graphic file (type bmp)
+<img/g4.png>
+File: img/g5.png Graphic file (type bmp)
+<img/g5.png>
+File: img/g6.png Graphic file (type bmp)
+<img/g6.png>
+File: img/g7.png Graphic file (type bmp)
+<img/g7.png>
+File: img/g8.png Graphic file (type bmp)
+<img/g8.png>
+ [23] [24] [25] [26] [27]) (./chapter6.tex [28]
+第 6 章
+) [29
+
+] [30
+
+] [31
+
+] (latex_out/main.aux) ) 
+Here is how much of TeX's memory you used:
+ 5485 strings out of 476552
+ 92008 string characters out of 5803662
+ 1870803 words of memory out of 5000000
+ 25986 multiletter control sequences out of 15000+600000
+ 534764 words of font info for 125 fonts, out of 8000000 for 9000
+ 929 hyphenation exceptions out of 8191
+ 55i,15n,63p,327b,751s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on latex_out/main.dvi (35 pages, 104552 bytes).
