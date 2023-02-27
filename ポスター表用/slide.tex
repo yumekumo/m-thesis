@@ -1,0 +1,49 @@
+\documentclass[a4paper,landscape]{jsarticle}
+\special{papersize=\the\paperwidth,\the\paperheight}
+%\documentclass{jreport}
+\usepackage[dvipdfmx]{graphicx}
+% \usepackage[dvipdfmx]{graphics}
+\usepackage{amsmath,amssymb}
+% \usepackage{amsmath}
+%\usepackage{pxjahyper}
+\usepackage{here}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage{hhline}
+\usepackage[hang,small,bf]{caption}
+\usepackage[subrefformat=parens]{subcaption}
+\usepackage{url}
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{colortbl} 
+\usepackage{xcolor}
+
+\begin{document}
+
+\begin{table}[htbp]
+  \small
+  \centering
+  \caption*{手法2, 手法3での区割列挙の結果}
+  \label{table:result_r}
+  \begin{tabular}{|c||rrrr||rrrr|}
+    \hline
+    & \multicolumn{4}{c||}{手法2} & \multicolumn{4}{c|}{手法3}\\
+    \hline
+    Name & node & solve & time(sec) & mem(MB) & node & solve & time(sec) & mem(MB) \\
+    \hline \hline
+    $G_1$ & 23{,}749 & 668{,}154 & 2.25 & 405 & 34{,}609 & 2{,}001{,}248 & \textcolor{blue}{2.77} & \textcolor{blue}{460}\\
+    $G_2$ & 6{,}581 & 40{,}106 & 3.38 & 652 & 55 & 2 & \textcolor{red}{0.01} & \textcolor{red}{4}\\
+    $G_3$ & 319{,}171 & 7{,}493{,}473 & 33.81 & 6{,}702 & 4{,}416 & 541 & \textcolor{red}{0.08} & \textcolor{red}{19}\\
+    $G_4$ & \cellcolor{lightgray} N/A & \cellcolor{lightgray} N/A & \cellcolor{lightgray} N/A & \cellcolor{lightgray} N/A & \cellcolor{lightgray} N/A & \cellcolor{lightgray} N/A & \cellcolor{lightgray} N/A & \cellcolor{lightgray} N/A \\
+    $G_5$ & 1{,}077{,}156 & 36{,}745{,}326 & 212.75 & 30{,}690 & 1{,}340 & 390 & \textcolor{red}{0.02} & \textcolor{red}{6}\\
+    $G_6$ & \cellcolor{lightgray} N/A & \cellcolor{lightgray} N/A & \cellcolor{lightgray} N/A & \cellcolor{lightgray} N/A & \cellcolor{pink}10{,}320 & \cellcolor{pink}17{,}657 & \cellcolor{pink}2.30 & \cellcolor{pink}471\\
+    $G_7$ & \cellcolor{lightgray} N/A & \cellcolor{lightgray} N/A & \cellcolor{lightgray} N/A & \cellcolor{lightgray} N/A & \cellcolor{pink}1{,}847{,}085 & \cellcolor{pink}1.29E+14 & \cellcolor{pink}89.02 & \cellcolor{pink}12{,}607\\
+    $G_8$ & \cellcolor{lightgray} N/A & \cellcolor{lightgray} N/A & \cellcolor{lightgray} N/A & \cellcolor{lightgray} N/A & \cellcolor{lightgray} N/A & \cellcolor{lightgray} N/A & \cellcolor{lightgray} N/A & \cellcolor{lightgray} N/A \\
+    \hline
+  \end{tabular}
+\end{table}
+
+
+\end{document}

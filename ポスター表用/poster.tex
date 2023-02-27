@@ -1,0 +1,84 @@
+\documentclass[a4j,12pt]{jreport}
+%\documentclass{jreport}
+\usepackage[dvipdfmx]{graphicx}
+% \usepackage[dvipdfmx]{graphics}
+\usepackage{amsmath,amssymb}
+% \usepackage{amsmath}
+%\usepackage{pxjahyper}
+\usepackage{here}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage{hhline}
+\usepackage[hang,small,bf]{caption}
+\usepackage[subrefformat=parens]{subcaption}
+\usepackage{url}
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{mathtools}
+
+\begin{document}
+
+\begin{table}[htbp]
+  \small
+  \caption{入力データ}
+  \label{table:input}
+  \centering
+  \begin{tabular}{l|rrr}
+    \hline
+    Name & $|V|$ & $|E|$ & $d$ \\
+    \hline\hline
+    $G_1$(Aomori) & 40 & 84 & 3 \\
+    $G_2$(Miyagi) & 39 & 86 & 5 \\
+    $G_3$(Yamagata) & 35 & 85 & 3 \\
+    $G_4$(Ibaraki) & 44 & 94 & 7 \\
+    $G_5$(Nagano) & 77 & 187 & 5 \\
+    $G_6$(Aichi) & 69 & 173 & 16 \\
+    $G_7$(Osaka) & 72 & 168 & 19 \\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+  \small
+  \caption{$r=1.4$を用いた列挙の結果}
+  \label{table:result_r}
+  \centering
+  \begin{tabular}{c|rrrr}
+    \hline
+    Name & node & solve & time(sec) & mem(MB) \\
+    \hline \hline
+    $G_1$ & 23{,}749 & 668{,}154 & 2.25 & 405 \\
+    $G_2$ & 6{,}581 & 40{,}106 & 3.38 & 652 \\
+    $G_3$ & 319{,}171 & 7{,}493{,}473 & 33.81 & 6{,}702 \\
+    $G_4$ & 1{,}077{,}156 & 36{,}745{,}326 & 212.75 & 30{,}690 \\
+    $G_5$ & N/A & N/A & N/A & N/A \\
+    $G_6$ & N/A & N/A & N/A & N/A \\
+    $G_7$ & N/A & N/A & N/A & N/A \\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+  \small
+  \caption{ヒューリスティクスを用いた列挙の結果}
+  \label{table:answer_h}
+  \centering
+  \begin{tabular}{c|rrrr}
+    \hline
+    Name &  node & solve & time(sec) & mem(MB) \\
+    \hline \hline
+    $G_1$ & 34{,}609 & 2{,}001{,}248 & 2.77 & 460 \\
+    $G_2$ & 55 & 2 & 0.01 & 4 \\
+    $G_3$ & 4{,}416 & 541 & 0.08 & 19 \\
+    $G_4$ & 1{,}340 & 390 & 0.02 & 6 \\
+    $G_5$ & 10{,}320 & 17{,}657 & 2.30 & 471 \\
+    $G_6$ & 1{,}847{,}085 & 1.29E+14 & 89.02 & 12{,}607 \\
+    $G_7$ & N/A & N/A & N/A & N/A \\
+    \hline
+  \end{tabular}
+\end{table}
+
+
+
+\end{document}
