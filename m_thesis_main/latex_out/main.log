@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.euc) (TeX Live 2022) (preloaded format=platex 2023.1.11)  27 FEB 2023 12:15
+This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.euc) (TeX Live 2022) (preloaded format=platex 2023.1.11)  27 FEB 2023 12:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -356,7 +356,17 @@ File: img/g7.png Graphic file (type bmp)
 <img/g7.png>
 File: img/g8.png Graphic file (type bmp)
 <img/g8.png>
- [24] [25] [26] [27] [28]) (./chapter6.tex [29]
+ [24] [25]
+Overfull \hbox (6.89977pt too wide) in paragraph at lines 177--191
+ [][][][] 
+ []
+
+[26]
+Overfull \hbox (3.14426pt too wide) in paragraph at lines 211--225
+ [][][][] 
+ []
+
+[27] [28]) (./chapter6.tex [29]
 第 6 章
 ) [30
 
@@ -368,12 +378,12 @@ File: img/g8.png Graphic file (type bmp)
 
 ] (latex_out/main.aux) ) 
 Here is how much of TeX's memory you used:
- 5485 strings out of 476552
- 92008 string characters out of 5803662
+ 5491 strings out of 476552
+ 92102 string characters out of 5803662
  1870803 words of memory out of 5000000
- 25986 multiletter control sequences out of 15000+600000
- 534764 words of font info for 125 fonts, out of 8000000 for 9000
+ 25992 multiletter control sequences out of 15000+600000
+ 536176 words of font info for 131 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  55i,15n,63p,327b,751s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on latex_out/main.dvi (37 pages, 106056 bytes).
+Output written on latex_out/main.dvi (37 pages, 106952 bytes).
